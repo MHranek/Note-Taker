@@ -15,6 +15,7 @@ app.use(express.static('public'));
 // TODO Routing
 
 // GET /notes => notes.html
+app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, '/public/notes.html')))
 
 // GET /api/notes => db.json
 
@@ -23,6 +24,6 @@ app.use(express.static('public'));
 // BONUS DELETE /api/notes/:id => delete note with id
 
 // GET * => index.html
-app.get('*', (req, res) => res.sendfile(path.join(__dirname, '/public/index.html')))
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')))
 
 app.listen(PORT, () => console.log(`Server listening at http://localhost:${PORT}`))
