@@ -25,8 +25,10 @@ app.get('/api/notes', (req, res) => {
 
 // POST /api/notes => save db.json
 app.post('/api/notes', (req, res) => {
+    const notes = dataBase;
+    notes.push(req.body);
+    fs.writeFileSync('./db/db.json', JSON.stringify(notes), (err) => err ? console.error(err): console.log(`Added new note`));
     res.json(`${req.method} request recieved`);
-    fs.writeFileSync('./db/db.json', JSON.stringify(req.body), (err) => err ? console.error(err): console.log(`Added new note`));
 })
 
 // BONUS DELETE /api/notes/:id => delete note with id

@@ -12,6 +12,11 @@ if (window.location.pathname === '/notes') {
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
+// random id generator
+const generateID = () => {
+  return '456';
+}
+
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
@@ -70,6 +75,7 @@ const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    id: generateID(),
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
