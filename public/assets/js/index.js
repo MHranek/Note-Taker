@@ -14,7 +14,7 @@ if (window.location.pathname === '/notes') {
 
 // random id generator
 const generateID = () => {
-  return Math.floor(Math.random() * 10000);
+  return crypto.randomUUID();
 }
 
 // Show an element
