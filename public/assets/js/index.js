@@ -139,7 +139,10 @@ const renderNoteList = async (notes) => {
     const spanEl = document.createElement('span');
     spanEl.classList.add('list-item-title');
     spanEl.innerText = text;
-    spanEl.addEventListener('click', handleNoteView);
+    // updating click listener to not add when no notes are in the list
+    if (delBtn) {
+      spanEl.addEventListener('click', handleNoteView);
+    }
 
     liEl.append(spanEl);
 
