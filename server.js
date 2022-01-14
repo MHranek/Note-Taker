@@ -4,7 +4,7 @@ const fs = require('fs');
 const dataBase = require('./db/db.json');
 const { argv } = require('process');
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
